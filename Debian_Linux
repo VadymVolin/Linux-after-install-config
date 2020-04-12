@@ -1,0 +1,22 @@
+#Debian likes:
+#----------------Node js 13.x------------
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt-get install -y nodejs
+#---------------PostgreSQL-12.x----------
+wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
+echo "deb http://apt.postgresql.org/pub/repos/apt/ `lsb_release -cs`-pgdg main" |sudo tee /etc/apt/sources.list.d/pgdg.list
+sudo apt update
+sudo apt -y install postgresql-12 postgresql-client-12
+sudo su - postgres
+psql -c "alter user postgres with password 'YourPass'"
+systemctl disable postgresql.service
+#--------------------Git-----------------
+sudo apt install git
+#--------------------Python Pip----------
+sudo apt install python3-pip
+#--------------------Oracle-JDK------------------
+#see official repositories .deb
+sudo dpkg -i zip_3.0-4_i386.deb
+sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk-9.0.4/bin/java 100
+sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk-9.0.4/bin/javac 100
+sudo update-alternatives --display java
