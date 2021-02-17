@@ -20,3 +20,10 @@ sudo dpkg -i zip_3.0-4_i386.deb
 sudo update-alternatives --install /usr/bin/java java /opt/jdk/jdk-9.0.4/bin/java 100
 sudo update-alternatives --install /usr/bin/javac javac /opt/jdk/jdk-9.0.4/bin/javac 100
 sudo update-alternatives --display java
+#For Manjaro Linux
+#download tar.gz from oracle site
+sudo tar -zxvf java-latest.tar.gz
+sudo cp -R jdk-15.0.2 /opt
+sudo ln -s /opt/jdk-15.0.2/bin/java /usr/bin/java
+java -version
+#java version "15.0.2" 2021-01-19
