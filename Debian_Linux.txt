@@ -25,5 +25,6 @@ sudo update-alternatives --display java
 sudo tar -zxvf java-latest.tar.gz
 sudo cp -R jdk-15.0.2 /opt
 sudo ln -s /opt/jdk-15.0.2/bin/java /usr/bin/java
+
 java -version
 #java version "15.0.2" 2021-01-19
